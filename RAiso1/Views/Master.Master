@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="RAiso1.Views.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link rel="stylesheet" type="text/css" href="~/Assets/Styles.css">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav>
+                <div class="leftNav">
+                    <asp:Button ID="HomeButton" class="navButton" runat="server" Text="Home" OnClick="HomeButton_Click" />
+                    <asp:Button ID="CartButton" class="navButton" runat="server" Text="Cart" />
+                    <asp:Button ID="TransactionsButton" class="navButton" runat="server" Text="Transactions" />
+                    <asp:Button ID="UpdateButton" class="navButton" runat="server" Text="Update Profile" />
+                </div>
+                <div class="rightNav">
+                    <asp:Button ID="LoginButton" class="navButton" runat="server" Text="Login" OnClick="LoginButton_Click" />
+                    <asp:Button ID="RegisterButton" class="navButton" runat="server" Text="Register" OnClick="RegisterButton_Click"/>
+                    <asp:Button ID="LogoutButton" class="navButton" runat="server" Text="Logout" />
+                </div>
+
+
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
