@@ -25,6 +25,11 @@ namespace RAiso1.Repositories
         {
             return (from user in db.Users where user.Username == username && user.Password == password select user).FirstOrDefault();
         }
+        public static User getUserByName(string username)
+        {
+            return (from user in db.Users where user.Username == username select user).FirstOrDefault();
+
+        }
         public static void updateUser(User user)
         {
             User foundUser = getUserByID(user.UserID);

@@ -1,4 +1,5 @@
-﻿using RAiso1.Handlers;
+﻿using RAiso1.Controllers;
+using RAiso1.Handlers;
 using RAiso1.Models;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace RAiso1.Views
 {
     public partial class Login : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,22 +21,17 @@ namespace RAiso1.Views
         {
             String username = UsernameTB.Text.ToString();
             String password = PasswordTB.Text.ToString();
-            User user = UserHandler.getUserLogin(username, password);
-            if (user == null)
+            Message.Text = UserController.loginUser(username, password);
+            if(Message.Text == (username + " has been logged in"))
             {
-                LoginWarning.Text = "User Not Found";
-            }
-            else
-            {
+                Session["User"] = username;
                 if (Remember.Checked)
                 {
                     HttpCookie cookie = new HttpCookie("User_Cookie");
-                    cookie.Value = user.UserID.ToString();
+                    cookie.Value = username;
                     cookie.Expires = DateTime.Now.AddHours(6);
                     Response.Cookies.Add(cookie);
                 }
-                Session["User"] = user.UserID;
-                UserHandler.loggedUser = user;
                 Response.Redirect("~/Views/Home.aspx");
             }
         }

@@ -60,13 +60,13 @@ namespace RAiso1.Views
         protected global::System.Web.UI.WebControls.Label GenderLabel;
 
         /// <summary>
-        /// GenderTB control.
+        /// GenderDD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GenderTB;
+        protected global::System.Web.UI.WebControls.DropDownList GenderDD;
 
         /// <summary>
         /// DobLabel control.
@@ -123,24 +123,6 @@ namespace RAiso1.Views
         protected global::System.Web.UI.WebControls.TextBox PhoneTB;
 
         /// <summary>
-        /// RegisterLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RegisterLabel;
-
-        /// <summary>
-        /// RegisterButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RegisterButton;
-
-        /// <summary>
         /// RememberLabel control.
         /// </summary>
         /// <remarks>
@@ -157,5 +139,23 @@ namespace RAiso1.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox Remember;
+
+        /// <summary>
+        /// Message control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Message;
+
+        /// <summary>
+        /// RegisterButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button RegisterButton;
     }
 }

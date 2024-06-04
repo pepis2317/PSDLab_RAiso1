@@ -11,62 +11,62 @@ namespace RAiso1.Views
 {
 
 
-    public partial class Login
+    public partial class StationeryDetail
     {
 
         /// <summary>
-        /// Label1 control.
+        /// NameLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label NameLabel;
 
         /// <summary>
-        /// UsernameTB control.
+        /// PriceLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UsernameTB;
+        protected global::System.Web.UI.WebControls.Label PriceLabel;
 
         /// <summary>
-        /// Label2 control.
+        /// CommsPlaceholder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.PlaceHolder CommsPlaceholder;
 
         /// <summary>
-        /// PasswordTB control.
+        /// DecreaseButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PasswordTB;
+        protected global::System.Web.UI.WebControls.Button DecreaseButton;
 
         /// <summary>
-        /// Label3 control.
+        /// Counter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label Counter;
 
         /// <summary>
-        /// Remember control.
+        /// IncreaseButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Remember;
+        protected global::System.Web.UI.WebControls.Button IncreaseButton;
 
         /// <summary>
         /// Message control.
@@ -78,12 +78,12 @@ namespace RAiso1.Views
         protected global::System.Web.UI.WebControls.Label Message;
 
         /// <summary>
-        /// LoginButton control.
+        /// AddButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LoginButton;
+        protected global::System.Web.UI.WebControls.Button AddButton;
     }
 }

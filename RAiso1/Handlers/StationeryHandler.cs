@@ -13,9 +13,21 @@ namespace RAiso1.Handlers
         {
             return StationeryRepository.getStationeries();
         }
-        public void insertStationery(Stationery stationery)
+        public static void insertStationery(Stationery stationery)
         {
             StationeryRepository.insertStationery(stationery);
+        }
+        public static Stationery getStationeryByID(int id)
+        {
+            return StationeryRepository.getStationery(id);
+        }
+        public static void editStationery(Stationery stationery)
+        {
+            StationeryRepository.updateStationery(stationery);
+        }
+        public static int getLatestID()
+        {
+            return StationeryRepository.getLatestID();
         }
     }
 }

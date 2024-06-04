@@ -13,7 +13,10 @@
     </div>
     <div>
         <asp:Label ID="GenderLabel" runat="server" Text="Gender"></asp:Label>
-        <asp:TextBox ID="GenderTB" runat="server"></asp:TextBox>
+        <asp:DropDownList ID="GenderDD" runat="server">
+            <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+            <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+        </asp:DropDownList>
     </div>
     <div>
         <asp:Label ID="DobLabel" runat="server" Text="Date of Birth"></asp:Label>
@@ -24,15 +27,16 @@
         <asp:TextBox ID="AddressTB" runat="server"></asp:TextBox>
     </div>
     <div>
-    <asp:Label ID="PhoneLabel" runat="server" Text="Phone"></asp:Label>
-    <asp:TextBox ID="PhoneTB" runat="server"></asp:TextBox>
-</div>
-    <div>
-        <asp:Label ID="RegisterLabel" runat="server" Text="Register"></asp:Label>
-        <asp:Button ID="RegisterButton" runat="server" Text="Register" OnClick="RegisterButton_Click" />
+        <asp:Label ID="PhoneLabel" runat="server" Text="Phone"></asp:Label>
+        <asp:TextBox ID="PhoneTB" runat="server"></asp:TextBox>
     </div>
     <div>
         <asp:Label ID="RememberLabel" runat="server" Text="Remember me"></asp:Label>
         <asp:CheckBox ID="Remember" runat="server" />
     </div>
+    <div>
+        <asp:Label ID="Message" runat="server" Text=""></asp:Label>
+        <asp:Button ID="RegisterButton" runat="server" Text="Register" OnClick="RegisterButton_Click" />
+    </div>
+
 </asp:Content>
