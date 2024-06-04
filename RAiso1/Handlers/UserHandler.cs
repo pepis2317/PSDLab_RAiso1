@@ -26,6 +26,10 @@ namespace RAiso1.Handlers
         {
             return UserRepository.getUserByID(id);
         }
+        public static User getUserByName(string name)
+        {
+            return UserRepository.getUserByName(name);
+        }
         public static void updateUser(User user)
         {
             UserRepository.updateUser(user);

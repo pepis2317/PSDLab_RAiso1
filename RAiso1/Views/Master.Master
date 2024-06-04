@@ -15,14 +15,15 @@
             <nav>
                 <div class="leftNav">
                     <asp:Button ID="HomeButton" class="navButton" runat="server" Text="Home" OnClick="HomeButton_Click" />
-                    <asp:Button ID="CartButton" class="navButton" runat="server" Text="Cart" />
+                    <asp:Button ID="CartButton" class="navButton" runat="server" Text="Cart"  OnClick="CartButton_Click"/>
                     <asp:Button ID="TransactionsButton" class="navButton" runat="server" Text="Transactions" />
                     <asp:Button ID="UpdateButton" class="navButton" runat="server" Text="Update Profile" />
+                    <asp:Button ID="InsertButton" CssClass="navButton" runat="server" Text="Insert Stationery" OnClick="InsertButton_Click" />
                 </div>
                 <div class="rightNav">
                     <asp:Button ID="LoginButton" class="navButton" runat="server" Text="Login" OnClick="LoginButton_Click" />
                     <asp:Button ID="RegisterButton" class="navButton" runat="server" Text="Register" OnClick="RegisterButton_Click"/>
-                    <asp:Button ID="LogoutButton" class="navButton" runat="server" Text="Logout" />
+                    <asp:Button ID="LogoutButton" class="navButton" runat="server" Text="Logout" OnClick="LogoutButton_Click" />
                 </div>
 
 

@@ -34,5 +34,9 @@ namespace RAiso1.Repositories
             db.Stationeries.Remove(s);
             db.SaveChanges();
         }
+        public static int getLatestID()
+        {
+            return (from s in db.Stationeries orderby s.StationeryID descending select s.StationeryID).FirstOrDefault();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using RAiso1.Controllers;
 using RAiso1.Handlers;
 using RAiso1.Models;
 using System;
@@ -21,6 +22,7 @@ namespace RAiso1.Views
                 CartButton.Visible = false;
                 TransactionsButton.Visible = false;
                 UpdateButton.Visible = false;
+                InsertButton.Visible = false;
             }
             else
             {
@@ -32,10 +34,12 @@ namespace RAiso1.Views
                 if (UserHandler.loggedUser.Role == "Customer")
                 {
                     CartButton.Visible = true;
+                    InsertButton.Visible = false;
                 }
                 else
                 {
                     CartButton.Visible = false;
+                    InsertButton.Visible = true;
                 }
             }
 
@@ -54,6 +58,25 @@ namespace RAiso1.Views
         protected void RegisterButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Register.aspx");
+        }
+
+        protected void LogoutButton_Click(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Response.Cookies["User_Cookie"].Expires = DateTime.Now.AddDays(-1);
+            UserController.logOutUser();
+            Response.Redirect("~/Views/Home.aspx");
+        }
+
+        protected void InsertButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/InsertStationery.aspx");
+        }
+
+        protected void CartButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"~/Views/Carts.aspx?ID={UserController.getLoggedUser().UserID}");
+
         }
     }
 }

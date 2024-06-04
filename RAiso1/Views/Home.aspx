@@ -3,18 +3,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%foreach (var s in stationeries){%>
-        <div class="stationeryCard" >
-            <h3><%=s.Name%></h3>
-            <h4><%=s.Price %></h4>
-            <%if (RAiso1.Handlers.UserHandler.loggedUser != null && RAiso1.Handlers.UserHandler.loggedUser.Role =="Admin"){  %>
-                <asp:Button ID="Delete" runat="server" Text="Delete" />
-                <asp:Button ID="Edit" runat="server" Text="Edit" />
-
-            <%} %>
-
-        </div>
-
-    <%}%>
+    <asp:Repeater ID="StationeryRepeater" runat="server">
+        <ItemTemplate>
+            <div class="stationeryCard">
+                <h3><%# Eval("Name") %></h3>
+                <h4><%# Eval("Price") %></h4>
+                <asp:Button ID="Button1" runat="server" Text="Details" CommandName="Details" CommandArgument='<%# Eval("StationeryID") %>' OnCommand="Stationery_Command" />
+                <asp:PlaceHolder ID="AdminButtonsPlaceholder" runat="server" Visible='<%# IsAdmin %>'>
+                    <asp:Button ID="DeleteButton" runat="server" Text="Delete" CommandName="Delete" CommandArgument='<%# Eval("StationeryID") %>' OnCommand="Stationery_Command" />
+                    <asp:Button ID="EditButton" runat="server" Text="Edit" CommandName="Edit" CommandArgument='<%# Eval("StationeryID") %>' OnCommand="Stationery_Command" />
+                </asp:PlaceHolder>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater>
 
 </asp:Content>
