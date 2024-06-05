@@ -9,10 +9,12 @@
                 <h4><%# Eval("Stationery.Name") %></h4>
                 <h4><%# Eval("Stationery.Price") %></h4>
                 <h4><%# Eval("Quantity") %></h4>
-                <asp:Button ID="UpdateButton" runat="server" Text="Update" CommandName="Update" CommandArgument='<%# Eval("Stationery.StationeryID") %>' OnCommand="Cart_Command"/>
-                <asp:Button ID="RemoveButton" runat="server" Text="Remove" />
+                <asp:Button ID="UpdateButton" runat="server" Text="Update" CommandName="Update" CommandArgument='<%# Eval("Stationery.StationeryID") %>' OnCommand="Cart_Command" />
+                <asp:Button ID="RemoveButton" runat="server" Text="Remove" CommandName="Remove" CommandArgument='<%# Eval("Stationery.StationeryID") %>' OnCommand="Cart_Command" />
             </div>
-
         </ItemTemplate>
     </asp:Repeater>
+    <asp:Button ID="CheckoutButton" runat="server" Text="Checkout" OnClick="CheckoutButton_Click" />
+
+    <asp:Label ID="Message" runat="server" Text=""></asp:Label>
 </asp:Content>

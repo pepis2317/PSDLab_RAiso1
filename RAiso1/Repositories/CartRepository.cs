@@ -28,16 +28,25 @@ namespace RAiso1.Repositories
             db.SaveChanges();
 
         }
-        public static void deleteCart(int userID, int stationeryID)
+        public static void deleteCarts(int userID)
         {
-            Cart cart = getSpecificCart(userID, stationeryID);
+            List<Cart> carts = getCartByUserID(userID);
+            foreach(Cart c in carts)
+            {
+                db.Carts.Remove(c);
+            }
+            
+            db.SaveChanges();
+        }
+        public static void deleteCart(Cart cart)
+        {
             db.Carts.Remove(cart);
             db.SaveChanges();
         }
         public static void updateCart(Cart cart)
         {
             Cart c = getSpecificCart(cart.UserID, cart.StationeryID);
-            cart.Quantity = cart.Quantity;
+            cart.Quantity = c.Quantity;
             db.SaveChanges();
         }
     }

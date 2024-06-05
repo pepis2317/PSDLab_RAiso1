@@ -20,26 +20,30 @@ namespace RAiso1.Views
             {
                 LogoutButton.Visible = false;
                 CartButton.Visible = false;
-                TransactionsButton.Visible = false;
+                TransactionDetailsButton.Visible = false;
                 UpdateButton.Visible = false;
                 InsertButton.Visible = false;
+                TransactionReportButton.Visible = false;
             }
             else
             {
                 LoginButton.Visible = false;
                 RegisterButton.Visible = false;
-                TransactionsButton.Visible = true;
                 UpdateButton.Visible = true;
                 LogoutButton.Visible = true;
                 if (UserHandler.loggedUser.Role == "Customer")
                 {
                     CartButton.Visible = true;
                     InsertButton.Visible = false;
+                    TransactionDetailsButton.Visible = true;
+                    TransactionReportButton.Visible = false;
                 }
                 else
                 {
                     CartButton.Visible = false;
                     InsertButton.Visible = true;
+                    TransactionDetailsButton.Visible = false;
+                    TransactionReportButton.Visible = true;
                 }
             }
 
@@ -76,6 +80,21 @@ namespace RAiso1.Views
         protected void CartButton_Click(object sender, EventArgs e)
         {
             Response.Redirect($"~/Views/Carts.aspx?ID={UserController.getLoggedUser().UserID}");
+
+        }
+
+        protected void UpdateButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/UpdateProfile.aspx");
+        }
+
+        protected void TransactionDetailsButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void TransactionReportButton_Click(object sender, EventArgs e)
+        {
 
         }
     }

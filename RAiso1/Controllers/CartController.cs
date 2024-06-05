@@ -40,5 +40,15 @@ namespace RAiso1.Controllers
             }
             return "quantity must be greater than 0";
         }
+        public static string deleteCarts(int userID)
+        {
+            CartHandler.deleteCarts(userID);
+            return "carts deleted";
+        }
+        public static void deleteCart(int userID, int stationeryID)
+        {
+            Cart c = getSpecificCart(userID, stationeryID);
+            CartHandler.deleteCart(c);
+        }
     }
 }
