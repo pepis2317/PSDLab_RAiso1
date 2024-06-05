@@ -13,5 +13,17 @@ namespace RAiso1.Handlers
         {
             return TransactionHeaderRepository.getTransactionHeaders();
         }
+        public static int getLatestID()
+        {
+            return TransactionHeaderRepository.getLatestID();
+        }
+        public static void insertTransactionHeader(TransactionHeader th)
+        {
+            TransactionHeaderRepository.addTransaction(th);
+        }
+        public static void insertTransactionDetail(TransactionDetail td)
+        {
+            TransactionDetailRepository.addTransactionDetail(td);
+        }
     }
 }

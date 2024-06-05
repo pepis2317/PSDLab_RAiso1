@@ -21,5 +21,11 @@ namespace RAiso1.Repositories
         {
             return (from t in db.TransactionDetails where t.TransactionID == transactionID select t).ToList();
         }
+        public static void addTransactionDetail(TransactionDetail transactionDetail)
+        {
+            db.TransactionDetails.Add(transactionDetail);
+            db.SaveChanges();
+        }
     }
+
 }

@@ -25,5 +25,13 @@ namespace RAiso1.Handlers
         {
             CartRepository.updateCart(cart);
         }
+        public static void deleteCarts(int userID) 
+        { 
+            CartRepository.deleteCarts(userID);
+        }
+        public static void deleteCart(Cart cart)
+        {
+            CartRepository.deleteCart(cart);
+        }
     }
 }

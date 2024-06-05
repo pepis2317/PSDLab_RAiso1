@@ -21,10 +21,14 @@ namespace RAiso1.Repositories
         {
             return (from t in db.TransactionHeaders where t.UserID == userID select t).FirstOrDefault();
         }
-        public static void addTransactions(TransactionHeader transactionHeader)
+        public static void addTransaction(TransactionHeader transactionHeader)
         {
             db.TransactionHeaders.Add(transactionHeader);
             db.SaveChanges();
+        }
+        public static int getLatestID()
+        {
+            return (from s in db.TransactionHeaders orderby s.TransactionID descending select s.TransactionID).FirstOrDefault();
         }
     }
 }
