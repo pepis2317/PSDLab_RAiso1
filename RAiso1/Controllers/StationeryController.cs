@@ -49,5 +49,9 @@ namespace RAiso1.Controllers
         {
             return StationeryHandler.getStationeryByID(id);
         }
+        public static void deleteStationery(int stationeryID)
+        {
+            StationeryHandler.deleteStationery(stationeryID);
+        }
     }
 }

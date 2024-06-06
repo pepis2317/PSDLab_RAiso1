@@ -17,9 +17,9 @@ namespace RAiso1.Repositories
         {
             return (from t in db.TransactionHeaders where t.TransactionID == id select t).FirstOrDefault();
         }
-        public static TransactionHeader GetTransactionHeaderByUserID(int userID)
+        public static List<TransactionHeader> GetTransactionHeadersByUserID(int userID)
         {
-            return (from t in db.TransactionHeaders where t.UserID == userID select t).FirstOrDefault();
+            return (from t in db.TransactionHeaders where t.UserID == userID select t).ToList();
         }
         public static void addTransaction(TransactionHeader transactionHeader)
         {

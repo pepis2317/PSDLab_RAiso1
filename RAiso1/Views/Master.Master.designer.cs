@@ -60,13 +60,13 @@ namespace RAiso1.Views
         protected global::System.Web.UI.WebControls.Button TransactionReportButton;
 
         /// <summary>
-        /// TransactionDetailsButton control.
+        /// TransactionHistoryButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TransactionDetailsButton;
+        protected global::System.Web.UI.WebControls.Button TransactionHistoryButton;
 
         /// <summary>
         /// UpdateButton control.

@@ -7,9 +7,9 @@ using System.Web;
 
 namespace RAiso1.Handlers
 {
-    public class TransactionHandler
+    public class TransactionHeaderHandler
     {
-        public static List<TransactionHeader> getTransactions()
+        public static List<TransactionHeader> getTransactionHeaders()
         {
             return TransactionHeaderRepository.getTransactionHeaders();
         }
@@ -21,9 +21,9 @@ namespace RAiso1.Handlers
         {
             TransactionHeaderRepository.addTransaction(th);
         }
-        public static void insertTransactionDetail(TransactionDetail td)
+        public static List<TransactionHeader> getTransactionHeaderByUserID(int userID)
         {
-            TransactionDetailRepository.addTransactionDetail(td);
+            return TransactionHeaderRepository.GetTransactionHeadersByUserID(userID);
         }
     }
 }

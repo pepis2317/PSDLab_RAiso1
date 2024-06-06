@@ -41,11 +41,11 @@ namespace RAiso1.Views
         protected void CheckoutButton_Click(object sender, EventArgs e)
         {
             List<Cart> carts = CartController.getCart(Convert.ToInt32(Request.QueryString["ID"]));
-            int transactionID = TransactionController.insertTransactionHeader(Convert.ToInt32(Request.QueryString["ID"]));
+            int transactionID = TransactionHeaderController.insertTransactionHeader(Convert.ToInt32(Request.QueryString["ID"]));
 
             foreach (Cart c in carts)
             {
-                TransactionController.insertTransactionDetail(transactionID, c.StationeryID, c.Quantity);
+                TransactionDetailsController.insertTransactionDetail(transactionID, c.StationeryID, c.Quantity);
             }
             Message.Text = CartController.deleteCarts(Convert.ToInt32(Request.QueryString["ID"]));
             if (Message.Text == "carts deleted")

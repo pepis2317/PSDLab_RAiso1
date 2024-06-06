@@ -17,7 +17,7 @@
                     <asp:Button ID="HomeButton" class="navButton" runat="server" Text="Home" OnClick="HomeButton_Click" />
                     <asp:Button ID="CartButton" class="navButton" runat="server" Text="Cart"  OnClick="CartButton_Click"/>
                     <asp:Button ID="TransactionReportButton" class="navButton" runat="server" Text="Transaction Report" OnClick="TransactionReportButton_Click" />
-                    <asp:Button ID="TransactionDetailsButton" class="navButton" runat="server" Text="Transaction Details" OnClick="TransactionDetailsButton_Click"/>
+                    <asp:Button ID="TransactionHistoryButton" class="navButton" runat="server" Text="Transaction History" OnClick="TransactionHistoryButton_Click"/>
                     <asp:Button ID="UpdateButton" class="navButton" runat="server" Text="Update Profile" OnClick="UpdateButton_Click"/>
                     <asp:Button ID="InsertButton" CssClass="navButton" runat="server" Text="Insert Stationery" OnClick="InsertButton_Click" />
                 </div>
