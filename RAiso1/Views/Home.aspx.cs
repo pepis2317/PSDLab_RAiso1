@@ -33,10 +33,11 @@ namespace RAiso1.Views
             if (e.CommandName == "Delete")
             {
                 System.Diagnostics.Debug.WriteLine($"Delete {id}");
+                StationeryController.deleteStationery(Convert.ToInt32(id));
+                Response.Redirect("~/Views/Home.aspx");
             }
             else if (e.CommandName == "Edit")
             {
-                System.Diagnostics.Debug.WriteLine($"Edit {id}");
                 Response.Redirect($"~/Views/EditStationery.aspx?ID={id}");
             }
             else if (e.CommandName == "Details")

@@ -1,4 +1,5 @@
-﻿using RAiso1.Models;
+﻿using RAiso1.Controllers;
+using RAiso1.Models;
 using RAiso1.Repositories;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,16 @@ namespace RAiso1.Handlers
         public static int getLatestID()
         {
             return StationeryRepository.getLatestID();
+        }
+        public static void deleteStationery(int stationeryID)
+        {
+            Stationery s = getStationeryByID(stationeryID);
+            //List<TransactionDetail> tdl = TransactionDetailsController.getTransactionDetailsByStationeryID(stationeryID);
+            //foreach(TransactionDetail td in tdl)
+            //{
+            //    td.StationeryID = -1;
+            //}
+            StationeryRepository.deleteStationery(s);
         }
     }
 }

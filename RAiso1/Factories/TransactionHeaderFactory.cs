@@ -12,7 +12,7 @@ namespace RAiso1.Factories
         public static TransactionHeader Create(int userID)
         {
             TransactionHeader th = new TransactionHeader();
-            th.TransactionID = TransactionHandler.getLatestID() + 1;
+            th.TransactionID = TransactionHeaderHandler.getLatestID() + 1;
             th.TransactionDate = DateTime.Now;
             th.UserID = userID;
             return th;

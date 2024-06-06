@@ -20,7 +20,7 @@ namespace RAiso1.Views
             {
                 LogoutButton.Visible = false;
                 CartButton.Visible = false;
-                TransactionDetailsButton.Visible = false;
+                TransactionHistoryButton.Visible = false;
                 UpdateButton.Visible = false;
                 InsertButton.Visible = false;
                 TransactionReportButton.Visible = false;
@@ -35,14 +35,14 @@ namespace RAiso1.Views
                 {
                     CartButton.Visible = true;
                     InsertButton.Visible = false;
-                    TransactionDetailsButton.Visible = true;
+                    TransactionHistoryButton.Visible = true;
                     TransactionReportButton.Visible = false;
                 }
                 else
                 {
                     CartButton.Visible = false;
                     InsertButton.Visible = true;
-                    TransactionDetailsButton.Visible = false;
+                    TransactionHistoryButton.Visible = false;
                     TransactionReportButton.Visible = true;
                 }
             }
@@ -88,9 +88,9 @@ namespace RAiso1.Views
             Response.Redirect("~/Views/UpdateProfile.aspx");
         }
 
-        protected void TransactionDetailsButton_Click(object sender, EventArgs e)
+        protected void TransactionHistoryButton_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("~/Views/TransactionHistory.aspx");
         }
 
         protected void TransactionReportButton_Click(object sender, EventArgs e)

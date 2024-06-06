@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Util;
 
 namespace RAiso1.Repositories
 {
@@ -25,6 +26,10 @@ namespace RAiso1.Repositories
         {
             db.TransactionDetails.Add(transactionDetail);
             db.SaveChanges();
+        }
+        public static List<TransactionDetail> getTransactionDetailsByStationeryID(int stationeryID)
+        {
+            return (from t in db.TransactionDetails where t.StationeryID == stationeryID select t).ToList();
         }
     }
 

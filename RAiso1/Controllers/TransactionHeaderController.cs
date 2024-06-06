@@ -8,18 +8,18 @@ using System.Web;
 
 namespace RAiso1.Controllers
 {
-    public class TransactionController
+    public class TransactionHeaderController
     {
         public static int insertTransactionHeader(int userID)
         {
             TransactionHeader th = TransactionHeaderFactory.Create(userID);
-            TransactionHandler.insertTransactionHeader(th);
+            TransactionHeaderHandler.insertTransactionHeader(th);
             return th.TransactionID;
         }
-        public static void insertTransactionDetail(int transactionID, int statoineryID, int quantity)
+        public static List<TransactionHeader> GetTransactionHeadersByUserID(int userID)
         {
-            TransactionDetail td = TransactionDetailFactory.Create(transactionID, statoineryID, quantity);
-            TransactionHandler.insertTransactionDetail(td);
+            return TransactionHeaderHandler.getTransactionHeaderByUserID(userID);
         }
+        
     }
 }
