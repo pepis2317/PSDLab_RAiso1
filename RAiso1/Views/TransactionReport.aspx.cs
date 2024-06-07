@@ -23,8 +23,8 @@ namespace RAiso1.Views
         private DataSet1 getData(List<TransactionHeader> thl)
         {
             DataSet1 data = new DataSet1();
-            var headertable = data.TransactionHeader;
-            var detailtable = data.TransactionDetail;
+            var headertable = data.Header;
+            var detailtable = data.Detail;
             foreach ( var t in thl )
             {
                 var hrow = headertable.NewRow();
@@ -32,11 +32,11 @@ namespace RAiso1.Views
                 hrow["UserID"] = t.UserID;
                 hrow["TransactionDate"] = t.TransactionDate;
                 headertable.Rows.Add(hrow);
-
+                int gt = 0;
                 foreach(TransactionDetail d in t.TransactionDetails)
                 {
                     Stationery s = StationeryController.getStationeryByID(d.StationeryID);
-                    string name = "";
+                    string name = "Deleted item";
                     int price = 0;
                     if(s != null)
                     {
@@ -49,8 +49,10 @@ namespace RAiso1.Views
                     drow["Quantity"] = d.Quantity;
                     drow["StationeryPrice"] = price;
                     drow["SubTotal"] = d.Quantity * price;
+                    gt += d.Quantity * price;
                     detailtable.Rows.Add(drow);
                 }
+                hrow["GrandTotal"] = gt;
             }
             return data;
         }

@@ -24,11 +24,11 @@ namespace RAiso1.Dataset {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSet1 : global::System.Data.DataSet {
         
-        private TransactionHeaderDataTable tableTransactionHeader;
+        private HeaderDataTable tableHeader;
         
-        private TransactionDetailDataTable tableTransactionDetail;
+        private DetailDataTable tableDetail;
         
-        private global::System.Data.DataRelation relationTransactionHeader_TransactionDetail;
+        private global::System.Data.DataRelation relationHeader_Detail;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -58,11 +58,11 @@ namespace RAiso1.Dataset {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["TransactionHeader"] != null)) {
-                    base.Tables.Add(new TransactionHeaderDataTable(ds.Tables["TransactionHeader"]));
+                if ((ds.Tables["Header"] != null)) {
+                    base.Tables.Add(new HeaderDataTable(ds.Tables["Header"]));
                 }
-                if ((ds.Tables["TransactionDetail"] != null)) {
-                    base.Tables.Add(new TransactionDetailDataTable(ds.Tables["TransactionDetail"]));
+                if ((ds.Tables["Detail"] != null)) {
+                    base.Tables.Add(new DetailDataTable(ds.Tables["Detail"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -86,9 +86,9 @@ namespace RAiso1.Dataset {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TransactionHeaderDataTable TransactionHeader {
+        public HeaderDataTable Header {
             get {
-                return this.tableTransactionHeader;
+                return this.tableHeader;
             }
         }
         
@@ -96,9 +96,9 @@ namespace RAiso1.Dataset {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TransactionDetailDataTable TransactionDetail {
+        public DetailDataTable Detail {
             get {
-                return this.tableTransactionDetail;
+                return this.tableDetail;
             }
         }
         
@@ -169,11 +169,11 @@ namespace RAiso1.Dataset {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["TransactionHeader"] != null)) {
-                    base.Tables.Add(new TransactionHeaderDataTable(ds.Tables["TransactionHeader"]));
+                if ((ds.Tables["Header"] != null)) {
+                    base.Tables.Add(new HeaderDataTable(ds.Tables["Header"]));
                 }
-                if ((ds.Tables["TransactionDetail"] != null)) {
-                    base.Tables.Add(new TransactionDetailDataTable(ds.Tables["TransactionDetail"]));
+                if ((ds.Tables["Detail"] != null)) {
+                    base.Tables.Add(new DetailDataTable(ds.Tables["Detail"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -208,19 +208,19 @@ namespace RAiso1.Dataset {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableTransactionHeader = ((TransactionHeaderDataTable)(base.Tables["TransactionHeader"]));
+            this.tableHeader = ((HeaderDataTable)(base.Tables["Header"]));
             if ((initTable == true)) {
-                if ((this.tableTransactionHeader != null)) {
-                    this.tableTransactionHeader.InitVars();
+                if ((this.tableHeader != null)) {
+                    this.tableHeader.InitVars();
                 }
             }
-            this.tableTransactionDetail = ((TransactionDetailDataTable)(base.Tables["TransactionDetail"]));
+            this.tableDetail = ((DetailDataTable)(base.Tables["Detail"]));
             if ((initTable == true)) {
-                if ((this.tableTransactionDetail != null)) {
-                    this.tableTransactionDetail.InitVars();
+                if ((this.tableDetail != null)) {
+                    this.tableDetail.InitVars();
                 }
             }
-            this.relationTransactionHeader_TransactionDetail = this.Relations["TransactionHeader_TransactionDetail"];
+            this.relationHeader_Detail = this.Relations["Header_Detail"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -231,25 +231,25 @@ namespace RAiso1.Dataset {
             this.Namespace = "http://tempuri.org/DataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableTransactionHeader = new TransactionHeaderDataTable();
-            base.Tables.Add(this.tableTransactionHeader);
-            this.tableTransactionDetail = new TransactionDetailDataTable();
-            base.Tables.Add(this.tableTransactionDetail);
-            this.relationTransactionHeader_TransactionDetail = new global::System.Data.DataRelation("TransactionHeader_TransactionDetail", new global::System.Data.DataColumn[] {
-                        this.tableTransactionHeader.TransactionIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableTransactionDetail.TransactionIDColumn}, false);
-            this.Relations.Add(this.relationTransactionHeader_TransactionDetail);
+            this.tableHeader = new HeaderDataTable();
+            base.Tables.Add(this.tableHeader);
+            this.tableDetail = new DetailDataTable();
+            base.Tables.Add(this.tableDetail);
+            this.relationHeader_Detail = new global::System.Data.DataRelation("Header_Detail", new global::System.Data.DataColumn[] {
+                        this.tableHeader.TransactionIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDetail.TransactionIDColumn}, false);
+            this.Relations.Add(this.relationHeader_Detail);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeTransactionHeader() {
+        private bool ShouldSerializeHeader() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeTransactionDetail() {
+        private bool ShouldSerializeDetail() {
             return false;
         }
         
@@ -309,17 +309,17 @@ namespace RAiso1.Dataset {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void TransactionHeaderRowChangeEventHandler(object sender, TransactionHeaderRowChangeEvent e);
+        public delegate void HeaderRowChangeEventHandler(object sender, HeaderRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void TransactionDetailRowChangeEventHandler(object sender, TransactionDetailRowChangeEvent e);
+        public delegate void DetailRowChangeEventHandler(object sender, DetailRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TransactionHeaderDataTable : global::System.Data.TypedTableBase<TransactionHeaderRow> {
+        public partial class HeaderDataTable : global::System.Data.TypedTableBase<HeaderRow> {
             
             private global::System.Data.DataColumn columnTransactionID;
             
@@ -327,10 +327,12 @@ namespace RAiso1.Dataset {
             
             private global::System.Data.DataColumn columnTransactionDate;
             
+            private global::System.Data.DataColumn columnGrandTotal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionHeaderDataTable() {
-                this.TableName = "TransactionHeader";
+            public HeaderDataTable() {
+                this.TableName = "Header";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -338,7 +340,7 @@ namespace RAiso1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal TransactionHeaderDataTable(global::System.Data.DataTable table) {
+            internal HeaderDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -355,7 +357,7 @@ namespace RAiso1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected TransactionHeaderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected HeaderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -386,6 +388,14 @@ namespace RAiso1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GrandTotalColumn {
+                get {
+                    return this.columnGrandTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -395,47 +405,48 @@ namespace RAiso1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionHeaderRow this[int index] {
+            public HeaderRow this[int index] {
                 get {
-                    return ((TransactionHeaderRow)(this.Rows[index]));
+                    return ((HeaderRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TransactionHeaderRowChangeEventHandler TransactionHeaderRowChanging;
+            public event HeaderRowChangeEventHandler HeaderRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TransactionHeaderRowChangeEventHandler TransactionHeaderRowChanged;
+            public event HeaderRowChangeEventHandler HeaderRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TransactionHeaderRowChangeEventHandler TransactionHeaderRowDeleting;
+            public event HeaderRowChangeEventHandler HeaderRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TransactionHeaderRowChangeEventHandler TransactionHeaderRowDeleted;
+            public event HeaderRowChangeEventHandler HeaderRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddTransactionHeaderRow(TransactionHeaderRow row) {
+            public void AddHeaderRow(HeaderRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionHeaderRow AddTransactionHeaderRow(string TransactionID, string UserID, string TransactionDate) {
-                TransactionHeaderRow rowTransactionHeaderRow = ((TransactionHeaderRow)(this.NewRow()));
+            public HeaderRow AddHeaderRow(string TransactionID, string UserID, string TransactionDate, string GrandTotal) {
+                HeaderRow rowHeaderRow = ((HeaderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TransactionID,
                         UserID,
-                        TransactionDate};
-                rowTransactionHeaderRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTransactionHeaderRow);
-                return rowTransactionHeaderRow;
+                        TransactionDate,
+                        GrandTotal};
+                rowHeaderRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowHeaderRow);
+                return rowHeaderRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TransactionHeaderDataTable cln = ((TransactionHeaderDataTable)(base.Clone()));
+                HeaderDataTable cln = ((HeaderDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -443,7 +454,7 @@ namespace RAiso1.Dataset {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TransactionHeaderDataTable();
+                return new HeaderDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -452,6 +463,7 @@ namespace RAiso1.Dataset {
                 this.columnTransactionID = base.Columns["TransactionID"];
                 this.columnUserID = base.Columns["UserID"];
                 this.columnTransactionDate = base.Columns["TransactionDate"];
+                this.columnGrandTotal = base.Columns["GrandTotal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -463,32 +475,34 @@ namespace RAiso1.Dataset {
                 base.Columns.Add(this.columnUserID);
                 this.columnTransactionDate = new global::System.Data.DataColumn("TransactionDate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransactionDate);
+                this.columnGrandTotal = new global::System.Data.DataColumn("GrandTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrandTotal);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionHeaderRow NewTransactionHeaderRow() {
-                return ((TransactionHeaderRow)(this.NewRow()));
+            public HeaderRow NewHeaderRow() {
+                return ((HeaderRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TransactionHeaderRow(builder);
+                return new HeaderRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TransactionHeaderRow);
+                return typeof(HeaderRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TransactionHeaderRowChanged != null)) {
-                    this.TransactionHeaderRowChanged(this, new TransactionHeaderRowChangeEvent(((TransactionHeaderRow)(e.Row)), e.Action));
+                if ((this.HeaderRowChanged != null)) {
+                    this.HeaderRowChanged(this, new HeaderRowChangeEvent(((HeaderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -496,8 +510,8 @@ namespace RAiso1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TransactionHeaderRowChanging != null)) {
-                    this.TransactionHeaderRowChanging(this, new TransactionHeaderRowChangeEvent(((TransactionHeaderRow)(e.Row)), e.Action));
+                if ((this.HeaderRowChanging != null)) {
+                    this.HeaderRowChanging(this, new HeaderRowChangeEvent(((HeaderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -505,8 +519,8 @@ namespace RAiso1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TransactionHeaderRowDeleted != null)) {
-                    this.TransactionHeaderRowDeleted(this, new TransactionHeaderRowChangeEvent(((TransactionHeaderRow)(e.Row)), e.Action));
+                if ((this.HeaderRowDeleted != null)) {
+                    this.HeaderRowDeleted(this, new HeaderRowChangeEvent(((HeaderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -514,14 +528,14 @@ namespace RAiso1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TransactionHeaderRowDeleting != null)) {
-                    this.TransactionHeaderRowDeleting(this, new TransactionHeaderRowChangeEvent(((TransactionHeaderRow)(e.Row)), e.Action));
+                if ((this.HeaderRowDeleting != null)) {
+                    this.HeaderRowDeleting(this, new HeaderRowChangeEvent(((HeaderRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveTransactionHeaderRow(TransactionHeaderRow row) {
+            public void RemoveHeaderRow(HeaderRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -548,7 +562,7 @@ namespace RAiso1.Dataset {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TransactionHeaderDataTable";
+                attribute2.FixedValue = "HeaderDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -594,18 +608,22 @@ namespace RAiso1.Dataset {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TransactionDetailDataTable : global::System.Data.TypedTableBase<TransactionDetailRow> {
+        public partial class DetailDataTable : global::System.Data.TypedTableBase<DetailRow> {
             
             private global::System.Data.DataColumn columnTransactionID;
             
-            private global::System.Data.DataColumn columnStationeryID;
+            private global::System.Data.DataColumn columnStationeryName;
             
             private global::System.Data.DataColumn columnQuantity;
             
+            private global::System.Data.DataColumn columnStationeryPrice;
+            
+            private global::System.Data.DataColumn columnSubTotal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionDetailDataTable() {
-                this.TableName = "TransactionDetail";
+            public DetailDataTable() {
+                this.TableName = "Detail";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -613,7 +631,7 @@ namespace RAiso1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal TransactionDetailDataTable(global::System.Data.DataTable table) {
+            internal DetailDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -630,7 +648,7 @@ namespace RAiso1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected TransactionDetailDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DetailDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -645,9 +663,9 @@ namespace RAiso1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn StationeryIDColumn {
+            public global::System.Data.DataColumn StationeryNameColumn {
                 get {
-                    return this.columnStationeryID;
+                    return this.columnStationeryName;
                 }
             }
             
@@ -656,6 +674,22 @@ namespace RAiso1.Dataset {
             public global::System.Data.DataColumn QuantityColumn {
                 get {
                     return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn StationeryPriceColumn {
+                get {
+                    return this.columnStationeryPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SubTotalColumn {
+                get {
+                    return this.columnSubTotal;
                 }
             }
             
@@ -670,50 +704,52 @@ namespace RAiso1.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionDetailRow this[int index] {
+            public DetailRow this[int index] {
                 get {
-                    return ((TransactionDetailRow)(this.Rows[index]));
+                    return ((DetailRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TransactionDetailRowChangeEventHandler TransactionDetailRowChanging;
+            public event DetailRowChangeEventHandler DetailRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TransactionDetailRowChangeEventHandler TransactionDetailRowChanged;
+            public event DetailRowChangeEventHandler DetailRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TransactionDetailRowChangeEventHandler TransactionDetailRowDeleting;
+            public event DetailRowChangeEventHandler DetailRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TransactionDetailRowChangeEventHandler TransactionDetailRowDeleted;
+            public event DetailRowChangeEventHandler DetailRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddTransactionDetailRow(TransactionDetailRow row) {
+            public void AddDetailRow(DetailRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionDetailRow AddTransactionDetailRow(TransactionHeaderRow parentTransactionHeaderRowByTransactionHeader_TransactionDetail, string StationeryID, string Quantity) {
-                TransactionDetailRow rowTransactionDetailRow = ((TransactionDetailRow)(this.NewRow()));
+            public DetailRow AddDetailRow(HeaderRow parentHeaderRowByHeader_Detail, string StationeryName, string Quantity, string StationeryPrice, string SubTotal) {
+                DetailRow rowDetailRow = ((DetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        StationeryID,
-                        Quantity};
-                if ((parentTransactionHeaderRowByTransactionHeader_TransactionDetail != null)) {
-                    columnValuesArray[0] = parentTransactionHeaderRowByTransactionHeader_TransactionDetail[0];
+                        StationeryName,
+                        Quantity,
+                        StationeryPrice,
+                        SubTotal};
+                if ((parentHeaderRowByHeader_Detail != null)) {
+                    columnValuesArray[0] = parentHeaderRowByHeader_Detail[0];
                 }
-                rowTransactionDetailRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTransactionDetailRow);
-                return rowTransactionDetailRow;
+                rowDetailRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDetailRow);
+                return rowDetailRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TransactionDetailDataTable cln = ((TransactionDetailDataTable)(base.Clone()));
+                DetailDataTable cln = ((DetailDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -721,15 +757,17 @@ namespace RAiso1.Dataset {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TransactionDetailDataTable();
+                return new DetailDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnTransactionID = base.Columns["TransactionID"];
-                this.columnStationeryID = base.Columns["StationeryID"];
+                this.columnStationeryName = base.Columns["StationeryName"];
                 this.columnQuantity = base.Columns["Quantity"];
+                this.columnStationeryPrice = base.Columns["StationeryPrice"];
+                this.columnSubTotal = base.Columns["SubTotal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -737,36 +775,40 @@ namespace RAiso1.Dataset {
             private void InitClass() {
                 this.columnTransactionID = new global::System.Data.DataColumn("TransactionID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransactionID);
-                this.columnStationeryID = new global::System.Data.DataColumn("StationeryID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationeryID);
+                this.columnStationeryName = new global::System.Data.DataColumn("StationeryName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationeryName);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
+                this.columnStationeryPrice = new global::System.Data.DataColumn("StationeryPrice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationeryPrice);
+                this.columnSubTotal = new global::System.Data.DataColumn("SubTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSubTotal);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionDetailRow NewTransactionDetailRow() {
-                return ((TransactionDetailRow)(this.NewRow()));
+            public DetailRow NewDetailRow() {
+                return ((DetailRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TransactionDetailRow(builder);
+                return new DetailRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TransactionDetailRow);
+                return typeof(DetailRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TransactionDetailRowChanged != null)) {
-                    this.TransactionDetailRowChanged(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
+                if ((this.DetailRowChanged != null)) {
+                    this.DetailRowChanged(this, new DetailRowChangeEvent(((DetailRow)(e.Row)), e.Action));
                 }
             }
             
@@ -774,8 +816,8 @@ namespace RAiso1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TransactionDetailRowChanging != null)) {
-                    this.TransactionDetailRowChanging(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
+                if ((this.DetailRowChanging != null)) {
+                    this.DetailRowChanging(this, new DetailRowChangeEvent(((DetailRow)(e.Row)), e.Action));
                 }
             }
             
@@ -783,8 +825,8 @@ namespace RAiso1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TransactionDetailRowDeleted != null)) {
-                    this.TransactionDetailRowDeleted(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
+                if ((this.DetailRowDeleted != null)) {
+                    this.DetailRowDeleted(this, new DetailRowChangeEvent(((DetailRow)(e.Row)), e.Action));
                 }
             }
             
@@ -792,14 +834,14 @@ namespace RAiso1.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TransactionDetailRowDeleting != null)) {
-                    this.TransactionDetailRowDeleting(this, new TransactionDetailRowChangeEvent(((TransactionDetailRow)(e.Row)), e.Action));
+                if ((this.DetailRowDeleting != null)) {
+                    this.DetailRowDeleting(this, new DetailRowChangeEvent(((DetailRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveTransactionDetailRow(TransactionDetailRow row) {
+            public void RemoveDetailRow(DetailRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -826,7 +868,7 @@ namespace RAiso1.Dataset {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TransactionDetailDataTable";
+                attribute2.FixedValue = "DetailDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -870,15 +912,15 @@ namespace RAiso1.Dataset {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TransactionHeaderRow : global::System.Data.DataRow {
+        public partial class HeaderRow : global::System.Data.DataRow {
             
-            private TransactionHeaderDataTable tableTransactionHeader;
+            private HeaderDataTable tableHeader;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal TransactionHeaderRow(global::System.Data.DataRowBuilder rb) : 
+            internal HeaderRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTransactionHeader = ((TransactionHeaderDataTable)(this.Table));
+                this.tableHeader = ((HeaderDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -886,14 +928,14 @@ namespace RAiso1.Dataset {
             public string TransactionID {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionHeader.TransactionIDColumn]));
+                        return ((string)(this[this.tableHeader.TransactionIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TransactionID\' in table \'TransactionHeader\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TransactionID\' in table \'Header\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTransactionHeader.TransactionIDColumn] = value;
+                    this[this.tableHeader.TransactionIDColumn] = value;
                 }
             }
             
@@ -902,14 +944,14 @@ namespace RAiso1.Dataset {
             public string UserID {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionHeader.UserIDColumn]));
+                        return ((string)(this[this.tableHeader.UserIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UserID\' in table \'TransactionHeader\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'UserID\' in table \'Header\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTransactionHeader.UserIDColumn] = value;
+                    this[this.tableHeader.UserIDColumn] = value;
                 }
             }
             
@@ -918,61 +960,89 @@ namespace RAiso1.Dataset {
             public string TransactionDate {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionHeader.TransactionDateColumn]));
+                        return ((string)(this[this.tableHeader.TransactionDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TransactionDate\' in table \'TransactionHeader\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TransactionDate\' in table \'Header\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTransactionHeader.TransactionDateColumn] = value;
+                    this[this.tableHeader.TransactionDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string GrandTotal {
+                get {
+                    try {
+                        return ((string)(this[this.tableHeader.GrandTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GrandTotal\' in table \'Header\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHeader.GrandTotalColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTransactionIDNull() {
-                return this.IsNull(this.tableTransactionHeader.TransactionIDColumn);
+                return this.IsNull(this.tableHeader.TransactionIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTransactionIDNull() {
-                this[this.tableTransactionHeader.TransactionIDColumn] = global::System.Convert.DBNull;
+                this[this.tableHeader.TransactionIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsUserIDNull() {
-                return this.IsNull(this.tableTransactionHeader.UserIDColumn);
+                return this.IsNull(this.tableHeader.UserIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetUserIDNull() {
-                this[this.tableTransactionHeader.UserIDColumn] = global::System.Convert.DBNull;
+                this[this.tableHeader.UserIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTransactionDateNull() {
-                return this.IsNull(this.tableTransactionHeader.TransactionDateColumn);
+                return this.IsNull(this.tableHeader.TransactionDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTransactionDateNull() {
-                this[this.tableTransactionHeader.TransactionDateColumn] = global::System.Convert.DBNull;
+                this[this.tableHeader.TransactionDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionDetailRow[] GetTransactionDetailRows() {
-                if ((this.Table.ChildRelations["TransactionHeader_TransactionDetail"] == null)) {
-                    return new TransactionDetailRow[0];
+            public bool IsGrandTotalNull() {
+                return this.IsNull(this.tableHeader.GrandTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGrandTotalNull() {
+                this[this.tableHeader.GrandTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DetailRow[] GetDetailRows() {
+                if ((this.Table.ChildRelations["Header_Detail"] == null)) {
+                    return new DetailRow[0];
                 }
                 else {
-                    return ((TransactionDetailRow[])(base.GetChildRows(this.Table.ChildRelations["TransactionHeader_TransactionDetail"])));
+                    return ((DetailRow[])(base.GetChildRows(this.Table.ChildRelations["Header_Detail"])));
                 }
             }
         }
@@ -980,15 +1050,15 @@ namespace RAiso1.Dataset {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TransactionDetailRow : global::System.Data.DataRow {
+        public partial class DetailRow : global::System.Data.DataRow {
             
-            private TransactionDetailDataTable tableTransactionDetail;
+            private DetailDataTable tableDetail;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal TransactionDetailRow(global::System.Data.DataRowBuilder rb) : 
+            internal DetailRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTransactionDetail = ((TransactionDetailDataTable)(this.Table));
+                this.tableDetail = ((DetailDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -996,30 +1066,30 @@ namespace RAiso1.Dataset {
             public string TransactionID {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionDetail.TransactionIDColumn]));
+                        return ((string)(this[this.tableDetail.TransactionIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TransactionID\' in table \'TransactionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TransactionID\' in table \'Detail\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTransactionDetail.TransactionIDColumn] = value;
+                    this[this.tableDetail.TransactionIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string StationeryID {
+            public string StationeryName {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionDetail.StationeryIDColumn]));
+                        return ((string)(this[this.tableDetail.StationeryNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'StationeryID\' in table \'TransactionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'StationeryName\' in table \'Detail\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTransactionDetail.StationeryIDColumn] = value;
+                    this[this.tableDetail.StationeryNameColumn] = value;
                 }
             }
             
@@ -1028,62 +1098,118 @@ namespace RAiso1.Dataset {
             public string Quantity {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionDetail.QuantityColumn]));
+                        return ((string)(this[this.tableDetail.QuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'TransactionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'Detail\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTransactionDetail.QuantityColumn] = value;
+                    this[this.tableDetail.QuantityColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionHeaderRow TransactionHeaderRow {
+            public string StationeryPrice {
                 get {
-                    return ((TransactionHeaderRow)(this.GetParentRow(this.Table.ParentRelations["TransactionHeader_TransactionDetail"])));
+                    try {
+                        return ((string)(this[this.tableDetail.StationeryPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StationeryPrice\' in table \'Detail\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["TransactionHeader_TransactionDetail"]);
+                    this[this.tableDetail.StationeryPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SubTotal {
+                get {
+                    try {
+                        return ((string)(this[this.tableDetail.SubTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SubTotal\' in table \'Detail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetail.SubTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HeaderRow HeaderRow {
+                get {
+                    return ((HeaderRow)(this.GetParentRow(this.Table.ParentRelations["Header_Detail"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Header_Detail"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTransactionIDNull() {
-                return this.IsNull(this.tableTransactionDetail.TransactionIDColumn);
+                return this.IsNull(this.tableDetail.TransactionIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTransactionIDNull() {
-                this[this.tableTransactionDetail.TransactionIDColumn] = global::System.Convert.DBNull;
+                this[this.tableDetail.TransactionIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStationeryIDNull() {
-                return this.IsNull(this.tableTransactionDetail.StationeryIDColumn);
+            public bool IsStationeryNameNull() {
+                return this.IsNull(this.tableDetail.StationeryNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStationeryIDNull() {
-                this[this.tableTransactionDetail.StationeryIDColumn] = global::System.Convert.DBNull;
+            public void SetStationeryNameNull() {
+                this[this.tableDetail.StationeryNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsQuantityNull() {
-                return this.IsNull(this.tableTransactionDetail.QuantityColumn);
+                return this.IsNull(this.tableDetail.QuantityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetQuantityNull() {
-                this[this.tableTransactionDetail.QuantityColumn] = global::System.Convert.DBNull;
+                this[this.tableDetail.QuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsStationeryPriceNull() {
+                return this.IsNull(this.tableDetail.StationeryPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetStationeryPriceNull() {
+                this[this.tableDetail.StationeryPriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSubTotalNull() {
+                return this.IsNull(this.tableDetail.SubTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSubTotalNull() {
+                this[this.tableDetail.SubTotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1091,22 +1217,22 @@ namespace RAiso1.Dataset {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class TransactionHeaderRowChangeEvent : global::System.EventArgs {
+        public class HeaderRowChangeEvent : global::System.EventArgs {
             
-            private TransactionHeaderRow eventRow;
+            private HeaderRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionHeaderRowChangeEvent(TransactionHeaderRow row, global::System.Data.DataRowAction action) {
+            public HeaderRowChangeEvent(HeaderRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionHeaderRow Row {
+            public HeaderRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1125,22 +1251,22 @@ namespace RAiso1.Dataset {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class TransactionDetailRowChangeEvent : global::System.EventArgs {
+        public class DetailRowChangeEvent : global::System.EventArgs {
             
-            private TransactionDetailRow eventRow;
+            private DetailRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionDetailRowChangeEvent(TransactionDetailRow row, global::System.Data.DataRowAction action) {
+            public DetailRowChangeEvent(DetailRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionDetailRow Row {
+            public DetailRow Row {
                 get {
                     return this.eventRow;
                 }
