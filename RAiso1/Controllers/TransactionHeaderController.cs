@@ -20,6 +20,11 @@ namespace RAiso1.Controllers
         {
             return TransactionHeaderHandler.getTransactionHeaderByUserID(userID);
         }
+        public static List<TransactionHeader> getTransactionHeaders()
+        {
+            return TransactionHeaderHandler.getTransactionHeaders();
+        }
+
         
     }
 }
